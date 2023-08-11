@@ -1,0 +1,50 @@
+www.angulararchitects.io
+Standalone Components in our free eBook
+https://www.angulararchitects.io/standalone-book
+https://github.com/manfredsteyer/standalone-example-cli
+https://github.com/rainerhahnekamp
+
+https://www.angulararchitects.io/en/book
+
+one of the most known NgModules in Angular was the CommonModule . It contains built-in
+directives like *ngIf or *ngFor and built-in pipes like async or json . While you can still import the
+whole CommonModule , meanwhile it’s also possible to just import the needed directives and pipes:
+
+import {
+AsyncPipe,
+JsonPipe,
+NgForOf,
+NgIf
+} from "@angular/common";
+
+
+
+the easiest approach for grouping stuff that goes together is using folders. However, you
+might go one step further by leveraging barrels:
+A barrel is an EcmaScript file that exports related
+elements.
+These files are often called public-api.ts or index.ts .
+
+
+
+define path mappings for your barrels you import from in your TypeScript configuration ( 
+tsconfig.json in the project’s root):
+"paths": {
+"@demo/shell": ["src/app/shell/index.ts"],
+[...]
+}
+
+
+
+importProvidersFrom(LayoutModule),
+
+
+
+Environment Injectors: Services for Specific Routes
+ENVIRONMENT_INITIALIZER
+
+
+
+Web Component (Custom Element) with Angular Elements
+npm i @angular/elements
+https://github.com/manfredsteyer/standalone-components-elements
